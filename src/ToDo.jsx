@@ -23,6 +23,22 @@ export default function TodoApp() {
     setTodos(updated);
   };
 
+  const moveTaskUp = (index) => {
+    if (index > 0) {
+      const updatedTasks = [...todos];
+      [updatedTasks[index], updatedTasks[index - 1]] = [updatedTasks[index - 1], updatedTasks[index]];
+      setTodos(updatedTasks);
+    }
+  }
+
+  const moveTaskDown = (index) => {
+    if (index < tasks.length - 1) {
+      const updatedTasks = [...todos];
+      [updatedTasks[index], updatedTasks[index + 1]] = [updatedTasks[index + 1], updatedTasks[index]];
+      setTodos(updatedTasks);
+    }
+  }
+
   return (
     <div className="container">
       <h1>Todo List</h1>
@@ -57,6 +73,8 @@ export default function TodoApp() {
             <button className="btn btn-danger" onClick={() => removeTodo(index)}>
               Delete
             </button>
+            <button className='btn btn-primary' onClick={() => moveTaskUp(index)}>Up</button>
+            <button className='btn btn-primary' onClick={() => moveTaskDown(index)}>Down</button>
           </li>
         ))}
       </ul>
