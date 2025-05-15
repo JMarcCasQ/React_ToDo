@@ -32,7 +32,7 @@ export default function TodoApp() {
   }
 
   const moveTaskDown = (index) => {
-    if (index < tasks.length - 1) {
+    if (index < todos.length - 1) {
       const updatedTasks = [...todos];
       [updatedTasks[index], updatedTasks[index + 1]] = [updatedTasks[index + 1], updatedTasks[index]];
       setTodos(updatedTasks);
