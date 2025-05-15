@@ -11,3 +11,5 @@ npm run dev
 
 npm install - This will install the necessary node modules
 npm run dev - This will run the program in the dev environment and will give you a localhost link where you can run the project
+
+To visit the project, go to: https://react-to-do-seven-zeta.vercel.app/
